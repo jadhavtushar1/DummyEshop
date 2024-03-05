@@ -1,0 +1,11 @@
+.navbar-header{
+    background-color: #bababa !important
+}
+.serchbar{
+    width: 50vw;
+}
+.cart-image{
+    position: absolute;
+    right: 20px;
+    height: 30px;
+}

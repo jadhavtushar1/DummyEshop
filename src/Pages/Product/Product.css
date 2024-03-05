@@ -1,0 +1,29 @@
+.product-details-parent{
+    width: 90vw;
+    display: flex;
+    gap: 50px;
+    padding-top: 25px;
+}
+.image-parent{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.carousel-img{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.carousel-img img{
+    height: 100px;
+}
+.details-parent{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: justify;
+}
+.focused-image{
+    height: 30rem !important;
+    width: 40rem;
+}
