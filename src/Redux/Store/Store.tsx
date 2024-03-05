@@ -3,7 +3,7 @@ import getProductsReducer from '../Slices/CardSlice'
 // ...
 
 const store = configureStore({
-  reducer: {alldata :getProductsReducer}
+  reducer: {allData :getProductsReducer}
 })
 
 export default store;

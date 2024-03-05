@@ -2,8 +2,22 @@ import React from 'react'
 import crime from '../../Assets/CrimeAndPunishment.jpg'
 import './Card.css'
 import { useNavigate } from 'react-router-dom'
+import Item from '../../Redux/Types/Item'
 interface CardProps {
-  data: any; // Set data prop to any type
+  data: {
+    id: number;
+    title: string;
+    description: string;
+    price: number;
+    discountPercentage: number;
+    rating: number;
+    stock: number;
+    brand: string;
+    category: string;
+    thumbnail: string;
+    images: string[];
+    cartItemId?: number; // Set data prop to any type
+  };
 }
 
 const  Card : React.FC<CardProps> = ({data}) => {

@@ -13,18 +13,17 @@ export const getAllData = createAsyncThunk("getalldata", async (query: string | 
     
     const response = await axios.get(url);
     
-    return response.data;
+    return response.data.products;
 });
 
 interface getdata {
     data : [] | null,
     isLoading:boolean,
-    error:String | null
+
 }
 const initialState : getdata ={
     data:[],
     isLoading : false,
-    error:null
 }
 
 const getproductSlice = createSlice({
@@ -34,16 +33,16 @@ const getproductSlice = createSlice({
 
     },
     extraReducers:(builder)=>{
-        builder.addCase(getAllData.fulfilled,(state,action : PayloadAction<any>)=>{
+        builder.addCase(getAllData.fulfilled,(state,action)=>{
             state.isLoading = true
             state.data = action.payload
         })
-        builder.addCase(getAllData.pending,(state,action : PayloadAction<any>)=>{
+        builder.addCase(getAllData.pending,(state,action)=>{
             state.isLoading = true
         })
-        builder.addCase(getAllData.rejected,(state,action : PayloadAction<any>)=>{
+        builder.addCase(getAllData.rejected,(state,action)=>{
             state.isLoading = false
-            state.error = action.payload
+            
         })
     }
 })
