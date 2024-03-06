@@ -46,12 +46,8 @@ const Product = ()=>{
         }
        
     },[])
-    useEffect(()=>{
-        console.log(mainImage)
-    },[mainImage])
 
     const handleImageClick = (index: number) => {
-        console.log(index)
         if (productData) {
             setMainImage(productData.images[index]);
         }

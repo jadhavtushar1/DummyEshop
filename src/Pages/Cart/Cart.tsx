@@ -4,7 +4,6 @@ import { useSelector } from "react-redux"
 
 export const Cart =()=>{
   const data = useSelector((state : any) => state.cartData.data )
-  console.log(data)
     return(
         
       <div className="cart-parent">
