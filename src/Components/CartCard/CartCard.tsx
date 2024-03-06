@@ -1,17 +1,33 @@
 import './CartCard.css'
 import crime from '../../Assets/CrimeAndPunishment.jpg'
 import star from '../../Assets/star-fill.svg'
-
-const CartCard =()=>{
+import React from 'react'
+interface product {
+    data: {
+        id: number;
+        title: string;
+        description: string;
+        price: number;
+        discountPercentage: number;
+        rating: number;
+        stock: number;
+        brand: string;
+        category: string;
+        thumbnail: string;
+        images: string[];
+        cartItemId?: number; // Set data prop to any type
+      };
+}
+const CartCard :  React.FC<product> =({data})=>{
   return (
         <div className="card-details">
             <div className="image">
-                <img src={crime} alt="" />
+                <img src={data.thumbnail} alt="" />
             </div>
             <div className='desc-parent'>
             <div className="details">
-                <h3 className='title'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, </h3>
-                <h4 className='desc'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</h4>
+                <h3 className='title'> {data.title} </h3>
+                <h4 className='desc'> {data.description}</h4>
                 <div className='rating'>
                     <div className='stars'>
                     <img src={star} alt="" />

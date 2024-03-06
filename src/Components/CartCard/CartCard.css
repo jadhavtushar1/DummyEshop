@@ -1,6 +1,6 @@
 .card-inner-parent{
     padding-top: 75px ;
-
+    padding-bottom: 20px;
 }
 .card-details{
     display: flex;

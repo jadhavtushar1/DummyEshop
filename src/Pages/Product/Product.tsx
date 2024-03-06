@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useNavigate , useLocation } from "react-router-dom"
 import './Product.css'
-
+import { useDispatch } from "react-redux"
+import { addToCart } from "../../Redux/Slices/CartSlice"
 interface ProductData {
     images: string[];
     title: string,
@@ -10,31 +11,57 @@ interface ProductData {
     brand: string,
   }
 
+  interface CardProps {
+    
+      id: number;
+      title: string;
+      description: string;
+      price: number;
+      discountPercentage: number;
+      rating: number;
+      stock: number;
+      brand: string;
+      category: string;
+      thumbnail: string;
+      images: string[];
+      cartItemId?: number; // Set data prop to any type
+
+  }
+
   interface imagetype {
     image:string
   }
 const Product = ()=>{
-    const [productData, setProdData] = useState<ProductData | null>(null);
-    const [mainImage,setMainImage] = useState<imagetype |null>(null)
+    const [productData, setProdData] = useState<CardProps | null>(null);
+    const [mainImage,setMainImage] = useState<string | null>()
     const location = useLocation()
-    const data : any = location.state
-    console.log(productData?.images)
+    const dispatch = useDispatch()
     useEffect(()=>{
-        if(data){
-            setProdData(data.data)
-            if (data.data.images.length > 0) {
-                setMainImage({ image: data.data.images[0] });
-            }
+        if(location?.state?.data){
+            setProdData(location.state.data)
+            setMainImage(location.state.data.thumbnail)
+            // if (data.data.images.length > 0) {
+            //     setMainImage({ image: data.data.images[0] });
+            // }
         }
        
     },[])
+    useEffect(()=>{
+        console.log(mainImage)
+    },[mainImage])
 
     const handleImageClick = (index: number) => {
-        if (productData && productData.images.length > index) {
-            setMainImage({ image: productData.images[index] });
+        console.log(index)
+        if (productData) {
+            setMainImage(productData.images[index]);
         }
     };
-
+    const handleCartClick = ()=>{
+        if(productData){
+            dispatch(addToCart(productData))
+        }
+        
+    }
     return(
         
         <div className="product-details-parent">
@@ -44,7 +71,8 @@ const Product = ()=>{
                         <img src={image} key={index}onClick={()=>handleImageClick(index)} className="main-image"></img>
                 ))}  
                 </div>
-                <img src={mainImage?.image} className="main-image focused-image"></img>
+                <img src={mainImage ?? undefined} className="main-image focused-image" alt="Product image"></img>
+
             </div>
             <div className="details-parent">
                     <div className="d-flex">
@@ -57,12 +85,11 @@ const Product = ()=>{
                     
                     <div className='actions-btns'>
       <button type="button" className="btn btn-primary cardbtn">Buy</button>
-      <button type="button" className="btn  btn-info cardbtn">Add to Cart</button>
+      <button type="button" className="btn  btn-info cardbtn" onClick={()=>handleCartClick()}>Add to Cart</button>
        </div>
             </div>
 
         </div>
-        
     )
 }
 export default Product

@@ -37,8 +37,8 @@ const  Card : React.FC<CardProps> = ({data}) => {
         <p className="card-text">{data?.description}</p>
       </div>
       <div className='actions-btns'>
-      <button type="button" className="btn btn-primary cardbtn">Buy</button>
-      <button type="button" className="btn  btn-info cardbtn">Add to Cart</button>
+      {/* <button type="button" className="btn btn-primary cardbtn">Buy</button>
+      <button type="button" className="btn  btn-info cardbtn">Add to Cart</button> */}
        </div>
     </div>
     </div>
