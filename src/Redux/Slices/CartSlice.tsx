@@ -14,7 +14,7 @@ export interface CardProps {
       category: string;
       thumbnail: string;
       images: string[];
-      cartItemId?: number; // Set data prop to any type
+      cartItemId?: number; 
    
   }
   export interface cartState {
