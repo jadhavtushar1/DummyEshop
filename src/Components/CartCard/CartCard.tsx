@@ -38,13 +38,14 @@ const CartCard :  React.FC<product> =({data})=>{
                     </div>
                     <div className='count'></div>
                 </div>
-                
-            </div>
-            <div className='action-btns'>
+                <div className='action-btns'>
                 <button type="button" className="btn btn-secondary btn-1">BUY NOW</button>
                 <button type="button" className="btn btn-secondary btn-2">REMOVE FROM CART</button>
                 </div>
             </div>
+                
+            </div>
+           
  
 </div>
 )}

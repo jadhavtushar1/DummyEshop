@@ -22,6 +22,7 @@
     flex-direction: column;
     gap: 20px;
     text-align: justify;
+    justify-content: center;
 }
 .focused-image{
     height: 30rem !important;

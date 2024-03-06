@@ -32,13 +32,13 @@ function Header() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-header">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#" onClick={()=>handleTitleCick()}>Charger</a>
+    <a className="navbar-brand" href="#" onClick={()=>handleTitleCick()}>STORE</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <div className="d-flex">
-        <input  className="form-control me-2 serchbar" type="search" placeholder="search for products" onKeyDown={(e) => handlesearchBox(e)} aria-label="Search"/>
+        <input  className="form-control me-2 serchbar" type="search" placeholder="search for products (do not click on buy now)" onKeyDown={(e) => handlesearchBox(e)} aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit" onClick={()=>handlesearchClick(searchText)}>Search</button>
       </div>
       <img className='cart-image' src={bag} alt="bag" onClick={()=>handleCartClick()}/>

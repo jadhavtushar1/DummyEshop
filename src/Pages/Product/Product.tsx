@@ -84,7 +84,7 @@ const Product = ()=>{
                     <h3>${productData?.price} </h3>
                     
                     <div className='actions-btns'>
-      <button type="button" className="btn btn-primary cardbtn">Buy</button>
+      <button type="button" className="btn btn-primary cardbtn">Buy Now</button>
       <button type="button" className="btn  btn-info cardbtn" onClick={()=>handleCartClick()}>Add to Cart</button>
        </div>
             </div>
