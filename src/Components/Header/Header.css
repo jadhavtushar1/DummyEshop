@@ -5,7 +5,25 @@
     width: 50vw;
 }
 .cart-image{
+  position: relative;
+    height: 40px;
+    top:-30px
+
+}
+.cart-count{
+    position: relative;
+    right: -7px;
+    top: 7.5px;
+    height: 25px;
+    width: 25px;
+    
+    border-radius: 50%;
+    background-color: #73726e;
+}
+
+.cart-container{
     position: absolute;
     right: 20px;
     height: 30px;
+    width: 30px;
 }

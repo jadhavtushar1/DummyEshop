@@ -5,10 +5,12 @@ import { useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../Redux/Hooks/Hooks';
 import { getAllData } from '../../Redux/Slices/CardSlice';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 function Header() {
   const [searchText,setSearchTet] = useState<any>()
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
+  const count = useSelector((state :any) =>state.cartData.count)
   const handleTitleCick =async () =>{
     
     navigate('/')
@@ -41,7 +43,11 @@ function Header() {
         <input  className="form-control me-2 serchbar" type="search" placeholder="search for products (do not click on buy now)" onKeyDown={(e) => handlesearchBox(e)} aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit" onClick={()=>handlesearchClick(searchText)}>Search</button>
       </div>
+      <div className='cart-container'>
+        <div className='cart-count'>{count}</div>
       <img className='cart-image' src={bag} alt="bag" onClick={()=>handleCartClick()}/>
+      </div>
+      
 
     </div>
   </div>

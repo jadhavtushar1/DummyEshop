@@ -1,4 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { count } from "console";
 
 export interface CardProps {
     
@@ -18,9 +19,11 @@ export interface CardProps {
   }
   export interface cartState {
     data :CardProps[],
+    count : number
   }
   export const initialState : cartState = {
-    data:[]
+    data:[],
+    count:0
   }
 
 const cartSlice = createSlice({
@@ -28,7 +31,8 @@ const cartSlice = createSlice({
     initialState,
     reducers:{
         addToCart :(state,action :  PayloadAction<CardProps>)=>{
-            state.data.push({...action.payload}) 
+            state.data.push({...action.payload})
+            state.count = state.data.length
         }
     }
 })
