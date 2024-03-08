@@ -1,17 +1,17 @@
 import './App.css';
-import Header from './Components/Header/Header';
 import Cart from './Pages/Cart/Cart';
 import HomePage from './Pages/Home/HomePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Product from './Pages/Product/Product';
+import LoginPage from './Pages/LoginPage/LoginPage';
 
 function App() {
   return (
     <div className="App">
     <Router>
-    <Header/>
     <Routes>
-      <Route path='/' element={<HomePage/>}/>
+    <Route path='/' element={<LoginPage/>}/>
+      <Route path='/HomePage' element={<HomePage/>}/>
       <Route path='/Cart' element={<Cart/>}/>
       <Route path='/Product' element={<Product/>}/>
     </Routes>

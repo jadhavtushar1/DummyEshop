@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk,createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { stat } from "fs";
+
 const parentURL : string | undefined = process.env.REACT_APP_API_URL || ''
 
 export const getAllData = createAsyncThunk("getalldata", async (query: string | undefined) => {

@@ -3,6 +3,7 @@ import { useNavigate , useLocation } from "react-router-dom"
 import './Product.css'
 import { useDispatch } from "react-redux"
 import { addToCart } from "../../Redux/Slices/CartSlice"
+import Header from "../../Components/Header/Header"
 interface ProductData {
     images: string[];
     title: string,
@@ -59,6 +60,8 @@ const Product = ()=>{
         
     }
     return(
+        <>
+        <Header/>
         
         <div className="product-details-parent">
             <div className="image-parent">
@@ -86,6 +89,7 @@ const Product = ()=>{
             </div>
 
         </div>
+        </>
     )
 }
 export default Product

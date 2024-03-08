@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import getProductsReducer from '../Slices/CardSlice'
 import addCartDataReducer from '../Slices/CartSlice'
+import authReducer from '../Slices/AuthinticateSlice'
 // ...
 
 const store = configureStore({
   reducer: 
     {
       allData :getProductsReducer,
-      cartData : addCartDataReducer
+      cartData : addCartDataReducer,
+      authData : authReducer
     }
 })
 
