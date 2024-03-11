@@ -82,10 +82,10 @@ const LoginPage = ()=>{
                 ):(
                     <div className='login-details-box m-4'>
                         <div className="input-group mb-3">
-                                <input type="text" value={userName} className="form-control text-field-css" placeholder="Username" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+                                <input type="text" className="form-control text-field-css" placeholder="Username" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
                         </div>
                         <div className="input-group mb-3">
-                                <input type="password" value={password} className="form-control text-field-css" placeholder="Password" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+                                <input type="password" className="form-control text-field-css" placeholder="Password" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
                         </div>
                         <div className="input-group mb-3">
                                 <input type="text" className="form-control text-field-css" placeholder="Age" aria-label="Recipient's username" aria-describedby="basic-addon2"/>

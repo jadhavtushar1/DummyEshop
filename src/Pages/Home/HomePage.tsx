@@ -11,6 +11,7 @@ import { UserState } from '../../Redux/Slices/AuthinticateSlice';
 import Header from '../../Components/Header/Header';
 
 
+
 const HomePage : React.FC = ()  =>{
   const dispatch = useAppDispatch();
   const data = useSelector((state : homeState) => state.allData.data);
@@ -19,9 +20,11 @@ const HomePage : React.FC = ()  =>{
     dispatch(getAllData()); 
   }, []);
 
+
   return (
     <div>
       <Header/>
+
       <div className='wrapCards cardparent'>
         {data.map((product, index) => (
           <Card key={index} data ={product} />
